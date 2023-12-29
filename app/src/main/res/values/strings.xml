@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Mortgage Calculator</string>
+    <string name="principal">Principal:</string>
+    <string name="annual_rate">Annual Rate %:</string>
+    <string name="monthly_payment">Monthly Payment:</string>
+    <string name="_6">6</string>
+    <string name="_100000">100000</string>
+    <string name="_1000">1000</string>
+    <string name="period">Period:</string>
+    <string name="total">Total:</string>
+    <string name="_0">0</string>
+    <string name="_0_dollar">$ 0</string>
+    <string name="calculate_monthly_n_payment">Calculate Monthly \n Payment</string>
+    <string name="go_to_n_monthly_payment_calculator">Go To\n Monthly Payment Calculator</string>
+    <string name="period_calculator">Period Calculator</string>
+    <string name="_10">10</string>
+    <string name="number_of_payments">Number Of Payments:</string>
+    <string name="go_to_n_period_calculator">Go To\n Period Calculator</string>
+    <string name="monthly_payment_calculator">Monthly Payment Calculator</string>
 </resources>

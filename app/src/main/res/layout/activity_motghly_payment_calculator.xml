@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MonthlyPaymentCalculatorActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
         <Button
             android:id="@+id/btnPeriodCal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Go To\n Period Calculator"
-            android:background="@drawable/roundedbutton"/>
+            android:textColor="#D8D3D3"
+            android:text="@string/go_to_n_period_calculator"
+            android:background="@drawable/rounded_button"/>
 
         <TextView
             android:id="@+id/txtNamePage"
@@ -25,7 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center"
-            android:text="Monthly Payment Calculator"
+            android:text="@string/monthly_payment_calculator"
+            android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -34,43 +34,40 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
-
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            tools:ignore="DisableBaselineAlignment">
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtPrincipal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:paddingTop="20dp"
-                    android:text="Principal: "
+                    android:gravity="center"
+                    android:text="@string/number_of_payments"
+                    android:textSize="20sp"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/monthly_payment"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/txtAnnualRate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:paddingTop="20dp"
-                    android:text="Annual Rate: "
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txtPeriod"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="20dp"
-                    android:text="Period: "
+                    android:gravity="center"
+                    android:text="@string/total"
                     android:textSize="20sp" />
 
 
@@ -78,44 +75,134 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNumOfPayments"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="@string/_0_dollar"
+                    android:textSize="20sp"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtMonthlyPayments"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="@string/_0_dollar"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="@string/_0_dollar"
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            tools:ignore="DisableBaselineAlignment">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPrincipal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/principal"
+                    android:textSize="20sp"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtAnnualRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/annual_rate"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtPeriod"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/period"
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="2">
 
 
                 <EditText
                     android:id="@+id/editPrincipal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:hint="100000"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/_100000"
+                    android:gravity="center"
                     android:textSize="20sp"
                     android:ems="10"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:importantForAutofill="no"
+                    tools:ignore="NestedWeights" />
 
                 <EditText
                     android:id="@+id/editAnnualRate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:hint="6"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/_6"
                     android:textSize="20sp"
                     android:ems="10"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:importantForAutofill="no"/>
 
                 <EditText
                     android:id="@+id/editPeriod"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:hint="10"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/_10"
                     android:textSize="20sp"
                     android:ems="10"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:importantForAutofill="no"/>
 
             </LinearLayout>
 
@@ -128,84 +215,19 @@
 
         <Button
             android:id="@+id/btnCalculateMonthlyPayment"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/roundedbutton"
-            android:text="Calculate Monthly \n Payment" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:text="Number Of Payments: "
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:text="Monthly Payment: "
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:text="Total: "
-                    android:textSize="20sp" />
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="#D8D3D3"
+            android:padding="10dp"
+            android:background="@drawable/rounded_button"
+            android:text="@string/calculate_monthly_n_payment" />
 
 
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtNumOfPayments"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:hint="$ 0"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txtMonthlyPayments"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:hint="$ 0"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txtTotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:hint="$ 0"
-                    android:textSize="20sp" />
 
 
 
-            </LinearLayout>
 
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

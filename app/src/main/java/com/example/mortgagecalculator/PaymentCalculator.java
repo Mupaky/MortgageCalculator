@@ -2,11 +2,10 @@ package com.example.mortgagecalculator;
 
 public class PaymentCalculator {
 
-    private double principal;
-    private double annualRate;
+    private final double principal;
     private int numberOfPayments;
     private double period;
-    private double r;
+    private final double r;
     private double total = 0;
     private double monthlyPayment;
     private int year;
@@ -17,7 +16,6 @@ public class PaymentCalculator {
 
     public PaymentCalculator(double principal, double annualRate){
         this.principal = principal;
-        this.annualRate = annualRate;
         this.r = annualRate / 100 / 12;
     }
 
